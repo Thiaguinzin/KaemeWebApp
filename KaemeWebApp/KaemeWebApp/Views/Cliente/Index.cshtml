@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Cliente>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clientes</h1>
+
+<table class="table table-bordered table_striped" style="width:100%">
+
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Nome
+                </td>
+                <td>
+                    @obj.DataNascimento
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
