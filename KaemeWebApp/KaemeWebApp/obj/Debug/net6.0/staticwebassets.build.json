@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4oXD0c/eBNsv3u/I7unfc7U4m3XM6pFVE+tO5JPcfBA=",
+  "Hash": "Jd27/taWZt9HBrImIhgcLYZGj9U9DjkFvpI4rWxGvEo=",
   "Source": "KaemeWebApp",
   "BasePath": "_content/KaemeWebApp",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\KaemeWebApp.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\BootswatchTheme.css",
+      "SourceId": "KaemeWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\",
+      "BasePath": "_content/KaemeWebApp",
+      "RelativePath": "css/BootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BootswatchTheme.css"
+    },
+    {
       "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\site.css",
       "SourceId": "KaemeWebApp",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\js\\Form.js",
+      "SourceId": "KaemeWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\",
+      "BasePath": "_content/KaemeWebApp",
+      "RelativePath": "js/Form.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Form.js"
     },
     {
       "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\js\\site.js",

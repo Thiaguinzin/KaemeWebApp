@@ -18,5 +18,19 @@ namespace KaemeWebApp.Controllers
             IEnumerable<Cliente> objClienteList = _db.Cliente;
             return View(objClienteList);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Cliente obj)
+        {
+            _db.Cliente.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

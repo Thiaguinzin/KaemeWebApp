@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\thiag\Documents\KaemeWebApp\KaemeWebApp\KaemeWebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/thiag/Documents/KaemeWebApp/KaemeWebApp/KaemeWebApp/Views/Cliente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/thiag/Documents/KaemeWebApp/KaemeWebApp/KaemeWebApp/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
