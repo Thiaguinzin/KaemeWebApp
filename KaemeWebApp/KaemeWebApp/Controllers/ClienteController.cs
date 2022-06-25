@@ -25,12 +25,48 @@ namespace KaemeWebApp.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken] -- Implementar com AJAX
         public IActionResult Create(Cliente obj)
         {
-            _db.Cliente.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (obj.Nome != null)
+            {
+                _db.Cliente.Add(obj);
+                _db.SaveChanges();
+                return Json(new { newUrl = Url.Action("Index", "Cliente") });
+            }
+
+            return View(obj);
+
+        }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var clienteDb = _db.Cliente.Find(id);
+            if (clienteDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(clienteDb);
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken] -- Implementar com AJAX
+        public IActionResult Edit(Cliente obj)
+        {
+            if (obj.Nome != null)
+            {
+                _db.Cliente.Update(obj);
+                _db.SaveChanges();
+                return Json(new { newUrl = Url.Action("Index", "Cliente") });
+            }
+
+            return View(obj);
+
         }
     }
 }

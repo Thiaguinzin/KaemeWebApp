@@ -21,56 +21,38 @@
         <thead>
             <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Data de Nascimento</th>
-                @*<th scope="col">Column heading</th>*@
+                <th scope="col">Email</th>
+                <th scope="col">Celular</th>
+                <th></th>
                 @*<th scope="col">Column heading</th>*@
             </tr>
         </thead>
         <tbody>
             @foreach(var obj in Model)
             {
-                <tr class="table-success">
+                <tr class="table-success" style="vertical-align: middle;">
                     <td>
                         @obj.Nome
                     </td>
                     <td>
-                        @obj.DataNascimento.ToString("dd/MM/yyyy")
+                        @obj.Email
+                    </td>
+                    <td>
+                        @obj.Celular
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            @*<button type="button" class="btn btn-outline-primary btn-sm"> <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> </a> <i class="bi bi-pencil-square"></i> Editar </button>*@
+                            <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> 
+                                <button type="button" class="btn btn-outline-primary btn-sm"> <i class="bi bi-pencil-square"></i> Editar  </button>
+                            </a>
+                        </div>
                     </td>
                 </tr>
+
+
             }
-@*            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td>Column content</td>
-            </tr>*@
         </tbody>
     </table>
-@*<table class="table table-bordered table_striped" style="width:100%">
 
-    <thead>
-        <tr>
-            <th>
-                Nome
-            </th>
-            <th>
-                Data de Nascimento
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var obj in Model)
-        {
-            <tr>
-                <td>
-                    @obj.Nome
-                </td>
-                <td>
-                    @obj.DataNascimento.ToString("dd/MM/yyyy")
-                </td>
-            </tr>
-        }
-    </tbody>
-
-</table>*@
 </div>

@@ -1,6 +1,87 @@
 ﻿
+function CreateSubmit() {
+
+    if (!Validate()) {
+
+        $(function () {
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Nome do cliente deve ser preenchido!'
+            });
+
+        });
+
+    }
+    else {
+        var data = $("#form").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/Cliente/Create",
+            data: data,
+        }).done(function (res) {
+            window.location.href = res.newUrl;
+        })
+    }
+
+}
+
+function EditSubmit() {
+
+    if (!Validate()) {
+
+        $(function () {
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Nome do cliente deve ser preenchido!'
+            });
+
+        });
+
+    }
+    else {
+        var data = $("#form").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/Cliente/Edit",
+            data: data,
+        }).done(function (res) {
+            window.location.href = res.newUrl;
+        })
+    }
+
+}
+
+function Validate() {
+    var nome = document.getElementById("Nome").value;
+
+    if (nome == '') {
+        return false
+    }
+    else {
+        return true
+    }
+
+}
+
 function ObterSigno(date) {
 
+    var signo = "";
     var arr = date.split("-");
     var mes = arr[1];
     var dia = arr[2];

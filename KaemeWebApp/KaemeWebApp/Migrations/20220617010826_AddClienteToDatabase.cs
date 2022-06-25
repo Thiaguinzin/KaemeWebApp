@@ -16,7 +16,7 @@ namespace KaemeWebApp.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DataNascimento = table.Column<DateTime>(type: "date", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Celular = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
