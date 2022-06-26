@@ -68,5 +68,36 @@ namespace KaemeWebApp.Controllers
             return View(obj);
 
         }
+        //public IActionResult Delete(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var clienteDb = _db.Cliente.Find(id);
+        //    if (clienteDb == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(clienteDb);
+        //}
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken] -- Implementar com AJAX
+        public IActionResult Delete(int? id)
+        {
+            var obj = _db.Cliente.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            _db.Cliente.Remove(obj);
+            _db.SaveChanges();
+            return Json(new { status = "Success" });
+
+        }
     }
 }

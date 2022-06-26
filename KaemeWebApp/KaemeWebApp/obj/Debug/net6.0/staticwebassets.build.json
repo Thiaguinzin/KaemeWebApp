@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JEbjgV3Mde0cftPe1R+gjQKwW3iA06bKG9DYRVzjAsE=",
+  "Hash": "5vZPiwnDWx0Ci+eOP+f8t2ewVATK185o12J7nr6mdNs=",
   "Source": "KaemeWebApp",
   "BasePath": "_content/KaemeWebApp",
   "Mode": "Default",
@@ -51,23 +51,6 @@
       "OriginalItemSpec": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\KaemeWebApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\bootstrap-4.min.css",
-      "SourceId": "KaemeWebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\",
-      "BasePath": "_content/KaemeWebApp",
-      "RelativePath": "css/bootstrap-4.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\bootstrap-4.min.css"
-    },
-    {
       "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\BootswatchTheme.css",
       "SourceId": "KaemeWebApp",
       "SourceType": "Discovered",
@@ -102,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\toastr.min.css",
+      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\css\\sweet_alert_bootstrap-4.min.css",
       "SourceId": "KaemeWebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\",
       "BasePath": "_content/KaemeWebApp",
-      "RelativePath": "css/toastr.min.css",
+      "RelativePath": "css/sweet_alert_bootstrap-4.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\toastr.min.css"
+      "OriginalItemSpec": "wwwroot\\css\\sweet_alert_bootstrap-4.min.css"
     },
     {
       "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\favicon.ico",
@@ -185,23 +168,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\sweetalert2.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\js\\toastr.min.js",
-      "SourceId": "KaemeWebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\",
-      "BasePath": "_content/KaemeWebApp",
-      "RelativePath": "js/toastr.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\toastr.min.js"
     },
     {
       "Identity": "C:\\Users\\thiag\\Documents\\KaemeWebApp\\KaemeWebApp\\KaemeWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

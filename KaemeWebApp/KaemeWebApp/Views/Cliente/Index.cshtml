@@ -24,13 +24,14 @@
                 <th scope="col">Email</th>
                 <th scope="col">Celular</th>
                 <th></th>
+                <th></th>
                 @*<th scope="col">Column heading</th>*@
             </tr>
         </thead>
         <tbody>
             @foreach(var obj in Model)
             {
-                <tr class="table-success" style="vertical-align: middle;">
+                <tr id="row_@obj.Id" class="table-success" style="vertical-align: middle;">
                     <td>
                         @obj.Nome
                     </td>
@@ -40,19 +41,78 @@
                     <td>
                         @obj.Celular
                     </td>
-                    <td>
+                    <td width="10%">
                         <div class="w-75 btn-group" role="group">
-                            @*<button type="button" class="btn btn-outline-primary btn-sm"> <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> </a> <i class="bi bi-pencil-square"></i> Editar </button>*@
                             <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> 
-                                <button type="button" class="btn btn-outline-primary btn-sm"> <i class="bi bi-pencil-square"></i> Editar  </button>
+                                <button type="button" class="btn btn-outline-primary btn-sm"> <i class="bi bi-pencil-square"></i> Editar </button>
                             </a>
                         </div>
                     </td>
+
+                    <td width="10%">
+                        <div class="w-75 btn-group" role="group">
+                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="ConfirmDelete(@obj.Id)"> <i class="bi bi-trash"></i> Excluir </button>
+                        </div>
+                    </td>
+
                 </tr>
 
-
+                <input type="hidden" id="idCliente"/>
             }
         </tbody>
     </table>
 
 </div>
+
+<div class="modal fade" id="modalDeletar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Deletar Cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <h6>Deseja realmente excluir o(a) Cliente?</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" onclick="DeleteEmployee()">Confirmar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+@section Scripts {
+    
+    <script>
+
+        var ConfirmDelete = function (id) {
+
+            $("#idCliente").val(id);
+            $("#modalDeletar").modal('show');
+
+        }
+
+        var DeleteEmployee = function () {
+
+            var clienteID = $("#idCliente").val();
+
+            $.ajax({
+
+                type: "POST",
+                url: "/Cliente/Delete",
+                data: { id: clienteID },
+                success: function (result) {
+                   
+                    $("#modalDeletar").modal("hide");
+                    $("#row_" + clienteID).remove();
+
+                }
+
+            })
+
+        }
+</script>
+}
