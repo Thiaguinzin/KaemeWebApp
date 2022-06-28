@@ -32,6 +32,7 @@ namespace KaemeWebApp.Controllers
             {
                 _db.Cliente.Add(obj);
                 _db.SaveChanges();
+                TempData["cliente_create"] = "Cliente cadastrado com sucesso";
                 return Json(new { newUrl = Url.Action("Index", "Cliente") });
             }
 
@@ -62,27 +63,13 @@ namespace KaemeWebApp.Controllers
             {
                 _db.Cliente.Update(obj);
                 _db.SaveChanges();
+                TempData["cliente_edit"] = "Cliente editado com sucesso";
                 return Json(new { newUrl = Url.Action("Index", "Cliente") });
             }
 
             return View(obj);
 
         }
-        //public IActionResult Delete(int? id)
-        //{
-        //    if (id == null || id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var clienteDb = _db.Cliente.Find(id);
-        //    if (clienteDb == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(clienteDb);
-        //}
 
         [HttpPost]
         //[ValidateAntiForgeryToken] -- Implementar com AJAX

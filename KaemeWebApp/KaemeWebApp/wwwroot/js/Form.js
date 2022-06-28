@@ -3,20 +3,7 @@ function CreateSubmit() {
 
     if (!Validate()) {
 
-        $(function () {
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-
-            Toast.fire({
-                icon: 'error',
-                title: 'Nome do cliente deve ser preenchido!'
-            });
-
-        });
+        toastr.error('Nome do cliente deve ser preenchido');
 
     }
     else {
@@ -37,20 +24,7 @@ function EditSubmit() {
 
     if (!Validate()) {
 
-        $(function () {
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-
-            Toast.fire({
-                icon: 'error',
-                title: 'Nome do cliente deve ser preenchido!'
-            });
-
-        });
+        toastr.error('Nome do cliente deve ser preenchido');
 
     }
     else {
@@ -124,4 +98,34 @@ function ObterSigno(date) {
     }
 
     document.getElementById("Signo").value = signo;
+}
+
+function mascaraTelefone(event) {
+    let tecla = event.key;
+    let telefone = event.target.value.replace(/\D+/g, "");
+
+    if (/^[0-9]$/i.test(tecla)) {
+        telefone = telefone + tecla;
+        let tamanho = telefone.length;
+
+        if (tamanho >= 12) {
+            return false;
+        }
+
+        if (tamanho > 10) {
+            telefone = telefone.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+        } else if (tamanho > 5) {
+            telefone = telefone.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+        } else if (tamanho > 2) {
+            telefone = telefone.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+        } else {
+            telefone = telefone.replace(/^(\d*)/, "($1");
+        }
+
+        event.target.value = telefone;
+    }
+
+    if (!["Backspace", "Delete"].includes(tecla)) {
+        return false;
+    }
 }

@@ -1,0 +1,17 @@
+﻿@if (TempData["cliente_create"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["cliente_create"]');
+    </script>
+}
+
+@if (TempData["cliente_edit"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["cliente_edit"]');
+    </script>
+}
