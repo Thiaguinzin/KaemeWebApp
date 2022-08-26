@@ -101,7 +101,8 @@ namespace KaemeWebApp.Controllers
 
             _db.Cliente.Remove(obj);
             _db.SaveChanges();
-            return Json(new { status = "Success" });
+            TempData["cliente_delete"] = "Cliente deletado com sucesso";
+            return Json(new { newUrl = Url.Action("Index", "Cliente") });
 
         }
     }

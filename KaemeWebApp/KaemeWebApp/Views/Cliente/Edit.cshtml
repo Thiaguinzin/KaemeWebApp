@@ -12,6 +12,7 @@
             <input type="hidden" asp-for="Id"/>
             <!---->
             <input type="hidden" asp-for="DataCadastro"/>
+            <input type="hidden" id="idCliente"/>
 
             <div class="form-group col-md-6">
                 <label asp-for="Nome" class="form-label mt-4"></label>
@@ -48,11 +49,60 @@
             </div>
         </div>
         <br />
-        
-        <button type= "button" onclick="EditSubmit()" class="btn btn-primary swalDefaultError"> Editar </button>
+
+        <button type= "button" onclick="EditSubmit()" class="btn btn-primary swalDefaultError"> Salvar </button>
         <a asp-controller="Cliente" asp-action="Index" class="btn btn-secondary"> Voltar </a>
+        <button type="button" class="btn btn-danger float-end" onclick="ConfirmDelete(@Model.Id)"> <i class="bi bi-trash"></i> Excluir </button>
 
     </div>
 </form>
 
+<!-- MODAL -->
+<div class="modal fade" id="modalDeletar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Deletar Cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <h6> Deseja realmente excluir o(a) Cliente? </h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="DeleteEmployee()"> Confirmar </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
 <script src="~/js/Form.js" asp-append-version="true"></script>
+@section Scripts {
+    
+<script>
+
+        var ConfirmDelete = function (id) {
+
+            $("#idCliente").val(id);
+            $("#modalDeletar").modal('show');
+
+        }
+
+        var DeleteEmployee = function () {
+
+            var clienteID = $("#idCliente").val();
+
+            $.ajax({
+
+                type: "POST",
+                url: "/Cliente/Delete",
+                data: { id: clienteID },
+            }).done(function (res) {
+                window.location.href = res.newUrl;
+            })
+
+        }
+</script>
+}
