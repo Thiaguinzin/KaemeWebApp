@@ -4,6 +4,7 @@ using KaemeWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KaemeWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220628011929_AddFreteStatusToDatabase")]
+    partial class AddFreteStatusToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,46 +59,6 @@ namespace KaemeWebApp.Migrations
                     b.ToTable("Cliente");
                 });
 
-            modelBuilder.Entity("KaemeWebApp.Models.Fornecedor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Contato")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("FreteStatusId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Instagram")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RazaoSocial")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("minPedidoAtacado")
-                        .HasColumnType("money");
-
-                    b.Property<decimal>("percDescAVista")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FreteStatusId");
-
-                    b.ToTable("Fornecedor");
-                });
-
             modelBuilder.Entity("KaemeWebApp.Models.FreteStatus", b =>
                 {
                     b.Property<int>("Id")
@@ -112,17 +74,6 @@ namespace KaemeWebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FreteStatus");
-                });
-
-            modelBuilder.Entity("KaemeWebApp.Models.Fornecedor", b =>
-                {
-                    b.HasOne("KaemeWebApp.Models.FreteStatus", "FreteStatus")
-                        .WithMany()
-                        .HasForeignKey("FreteStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FreteStatus");
                 });
 #pragma warning restore 612, 618
         }

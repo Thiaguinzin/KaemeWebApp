@@ -22,6 +22,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
+                <th></th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Celular</th>
@@ -34,6 +35,13 @@
             @foreach(var obj in Model)
             {
                 <tr id="row_@obj.Id" class="table-success" style="vertical-align: middle;">
+                    <td width="3%">
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Cliente" asp-action="View" asp-route-id="@obj.Id"> 
+                                <button type="button" class="btn btn-outline-dark btn-sm"> <i class="bi bi-search"></i></button>
+                            </a>
+                        </div>
+                    </td>
                     <td>
                         @obj.Nome
                     </td>
@@ -43,7 +51,7 @@
                     <td>
                         @obj.Celular
                     </td>
-                    <td width="10%">
+                    <td width="9%">
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> 
                                 <button type="button" class="btn btn-outline-primary btn-sm"> <i class="bi bi-pencil-square"></i> Editar </button>

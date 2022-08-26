@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FreteStatus>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_Notification" />
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> Frete Status </h2>
+        </div>
+    </div>
+    <br>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr class="table-success" style="vertical-align: middle;">
+                    <td>
+                        @obj.Codigo
+                    </td>
+                    <td>
+                        @obj.Descricao
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

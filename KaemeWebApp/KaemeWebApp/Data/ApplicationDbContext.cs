@@ -9,6 +9,10 @@ namespace KaemeWebApp.Data
         {   
         }
 
-        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }        
+        public DbSet<FreteStatus> FreteStatus { get; set; }
+        public DbSet<Fornecedor> Fornecedor { get; set; }
+
+
     }
 }

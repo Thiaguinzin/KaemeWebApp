@@ -21,7 +21,7 @@ namespace KaemeWebApp.Migrations
                     Celular = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Signo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DataCadastro = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {

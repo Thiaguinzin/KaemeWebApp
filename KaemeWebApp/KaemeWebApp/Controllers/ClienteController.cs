@@ -19,9 +19,42 @@ namespace KaemeWebApp.Controllers
             return View(objClienteList);
         }
 
+
         public IActionResult Create()
         {
             return View();
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var clienteDb = _db.Cliente.Find(id);
+            if (clienteDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(clienteDb);
+        }
+
+        public IActionResult View(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var clienteDb = _db.Cliente.Find(id);
+            if (clienteDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(clienteDb);
         }
 
         [HttpPost]
@@ -38,21 +71,6 @@ namespace KaemeWebApp.Controllers
 
             return View(obj);
 
-        }
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            var clienteDb = _db.Cliente.Find(id);
-            if (clienteDb == null)
-            {
-                return NotFound();
-            }
-
-            return View(clienteDb);
         }
 
         [HttpPost]

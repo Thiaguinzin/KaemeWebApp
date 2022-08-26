@@ -1,0 +1,50 @@
+﻿@model Cliente
+
+
+<div class="border p-3 mt-4">
+    <div class="row pb-2">
+        <h2 class="text-primary"> @Model.Nome </h2>
+        <hr/>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-md-6">
+            <label asp-for="Nome" class="form-label mt-4"></label>
+            <input asp-for="Nome" class="form-control col-md-4" id="Nome" readonly>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="Email" class="form-label mt-4"></label>
+            <input asp-for="Email" class="form-control col-md-4" id="Email" readonly>
+        </div>
+        </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label asp-for="Celular" class="form-label mt-4"></label>
+            <input asp-for="Celular" class="form-control col-md-4" id="Celular" readonly>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="Endereco" class="form-label mt-4"> Endereço </label>
+            <input asp-for="Endereco" class="form-control col-md-4" id="Endereco" readonly>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label asp-for="DataNascimento" class="form-label mt-4"> Data de Nascimento </label>
+            <input asp-for="DataNascimento" type = "date" class="form-control col-md-4" id="DataNascimento" readonly>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="Signo" class="form-label mt-4"></label>
+            <input asp-for="Signo" class="form-control col-md-4" id="Signo" readonly>
+        </div>
+    </div>
+    <br />
+        
+    <a asp-controller="Cliente" asp-action="Index" class="btn btn-secondary"> Voltar </a>
+
+</div>
