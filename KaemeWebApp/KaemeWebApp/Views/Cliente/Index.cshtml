@@ -25,9 +25,6 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Celular</th>
-                @*<th></th>*@
-                @*<th></th>*@
-                @*<th scope="col">Column heading</th>*@
             </tr>
         </thead>
         <tbody>
@@ -43,23 +40,8 @@
                     <td>
                         @obj.Celular
                     </td>
-@*                    <td width="9%">
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-controller="Cliente" asp-action="Edit" asp-route-id="@obj.Id"> 
-                                <button type="button" class="btn btn-outline-primary btn-sm"> <i class="bi bi-pencil-square"></i> Editar </button>
-                            </a>
-                        </div>
-                    </td>
-
-                    <td width="10%">
-                        <div class="w-75 btn-group" role="group">
-                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="ConfirmDelete(@obj.Id)"> <i class="bi bi-trash"></i> Excluir </button>
-                        </div>
-                    </td>*@
 
                 </tr>
-
-                <input type="hidden" id="idCliente"/>
             }
         </tbody>
     </table>

@@ -13,7 +13,7 @@ namespace KaemeWebApp.Models
         [Column(TypeName = "money")]
         public decimal minPedidoAtacado { get; set; }
         [Required]
-        public FreteStatus FreteStatus { get; set; }
+        public int FreteStatusID { get; set; }
         public decimal percDescAVista { get; set; }
         public string Endereco { get; set; }
         public string Instagram { get; set; }

@@ -17,5 +17,19 @@ namespace KaemeWebApp.Controllers
             IEnumerable<FreteStatus> objFreteStatusList = _db.FreteStatus;
             return View(objFreteStatusList);
         }
+
+        [HttpGet]
+        //[ValidateAntiForgeryToken] -- Implementar com AJAX
+        public JsonResult GetFrete()
+        {
+            var aux = Json (_db.FreteStatus.Select(x => new
+            {
+                Id = x.Id,
+                Descricao = x.Descricao
+            }).ToList());
+
+            return aux;
+        }
+
     }
 }

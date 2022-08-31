@@ -20,6 +20,27 @@ function CreateSubmit() {
 
 }
 
+function CreateSubmitFornecedor() {
+
+    if (!ValidateFornecedor()) {
+
+        toastr.error('Razão Social do fornecedor deve ser preenchido');
+
+    }
+    else {
+        var data = $("#form").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/Fornecedor/Create",
+            data: data,
+        }).done(function (res) {
+            window.location.href = res.newUrl;
+        })
+    }
+
+}
+
 function EditSubmit() {
 
     if (!Validate()) {
@@ -45,6 +66,18 @@ function Validate() {
     var nome = document.getElementById("Nome").value;
 
     if (nome == '') {
+        return false
+    }
+    else {
+        return true
+    }
+
+}
+
+function ValidateFornecedor() {
+    var razaoSocial = document.getElementById("RazaoSocial").value;
+
+    if (razaoSocial == '') {
         return false
     }
     else {

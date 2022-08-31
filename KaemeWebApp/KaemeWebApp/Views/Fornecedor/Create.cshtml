@@ -1,0 +1,106 @@
+﻿@model Fornecedor
+
+<form id="form">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Cadastrar Fornecedor </h2>
+            <hr/>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="RazaoSocial" class="form-label mt-4"> Razão Social </label>
+                <input asp-for="RazaoSocial" class="form-control col-md-4" id="RazaoSocial" placeholder="Digite a Razão Social">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="Contato" class="form-label mt-4"></label>
+                <input asp-for="Contato" class="form-control col-md-4" onkeydown="return mascaraTelefone(event)" id="Contato" placeholder="(21) 99999-9999">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="Endereco" class="form-label mt-4"> Endereço </label>
+                <input asp-for="Endereco"  class="form-control col-md-4" id="Endereco" placeholder="Digite o Endereço">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="Instagram" class="form-label mt-4"> </label>
+                <input asp-for="Instagram" class="form-control col-md-4" id="Instagram" placeholder="Digite o Instagram">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="minPedidoAtacado" class="form-label mt-4"> Mínimo pedido no atacado </label>
+                <input asp-for="minPedidoAtacado" class="form-control col-md-4" id="minPedidoAtacado">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="percDescAVista" class="form-label mt-4"> Percentual de desconto à vista </label>
+                <input asp-for="percDescAVista" class="form-control col-md-4" id="percDescAVista">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="FreteStatusID" class="form-label mt-4"> Frete Status </label>
+                <select asp-for="FreteStatusID" class="form-control" id="dropdown"></select>  
+            </div>
+        </div>
+
+        <br />
+
+        <button type= "button" onclick="CreateSubmitFornecedor()" class="btn btn-primary swalDefaultError"> Salvar </button>
+        <a asp-controller="Fornecedor" asp-action="Index" class="btn btn-secondary"> Voltar </a>
+
+    </div>
+</form>
+
+<script src="~/js/Form.js" asp-append-version="true"></script>
+
+@section Scripts
+{
+<script>
+
+    $(document).ready(function () {  
+           $.ajax({  
+               type: "GET",  
+               url: "/FreteStatus/GetFrete",
+               data: "json",
+               success: function (data) {  
+                helpers.buildDropdown(
+                    data,
+                    $('#dropdown'),
+                    'Select an option'
+                );
+            } 
+           });  
+       });  
+
+        var helpers =
+        {
+            buildDropdown: function(result, dropdown, emptyMessage)
+            {
+                console.log(result);
+                // Remove current options
+                dropdown.html('');
+
+                // Add the empty option with the empty message
+                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+
+                // Check result isnt empty
+                if(result != '')
+                {
+                    // Loop through each of the results and append the option to the dropdown
+                    $.each(result, function(k, v) {
+                        dropdown.append('<option value="' + v.id + '">' + v.descricao + '</option>');
+                    });
+                }
+            }
+        }
+
+
+</script>
+}
