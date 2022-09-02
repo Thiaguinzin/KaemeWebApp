@@ -14,13 +14,13 @@ namespace KaemeWebApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RazaoSocial = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    minPedidoAtacado = table.Column<decimal>(type: "money", nullable: false),
+                    RazaoSocial = table.Column<string>(type: "varchar(100)", nullable: false),
+                    minPedidoAtacado = table.Column<decimal>(type: "money", nullable: true),
                     FreteStatusId = table.Column<int>(type: "int", nullable: false),
-                    percDescAVista = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Instagram = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Contato = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    percDescAVista = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Endereco = table.Column<string>(type: "varchar(100)", nullable: true),
+                    Instagram = table.Column<string>(type: "varchar(100)", nullable: true),
+                    Contato = table.Column<string>(type: "varchar(100)", nullable: true)
                 },
                 constraints: table =>
                 {

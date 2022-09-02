@@ -68,7 +68,7 @@
                     <h6> Deseja realmente excluir o(a) Cliente? </h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="DeleteEmployee()"> Confirmar </button>
+                    <button type="button" class="btn btn-success" onclick="DeleteCliente()"> Confirmar </button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
 
@@ -78,31 +78,5 @@
 
 </div>
 
+<script src="~/js/Cliente.js" asp-append-version="true"></script>
 <script src="~/js/Form.js" asp-append-version="true"></script>
-@section Scripts {
-    
-<script>
-
-        var ConfirmDelete = function (id) {
-
-            $("#idCliente").val(id);
-            $("#modalDeletar").modal('show');
-
-        }
-
-        var DeleteEmployee = function () {
-
-            var clienteID = $("#idCliente").val();
-
-            $.ajax({
-
-                type: "POST",
-                url: "/Cliente/Delete",
-                data: { id: clienteID },
-            }).done(function (res) {
-                window.location.href = res.newUrl;
-            })
-
-        }
-</script>
-}

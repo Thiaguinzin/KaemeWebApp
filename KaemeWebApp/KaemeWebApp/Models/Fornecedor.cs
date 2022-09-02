@@ -11,12 +11,12 @@ namespace KaemeWebApp.Models
         [Required]            
         public string RazaoSocial { get; set; }
         [Column(TypeName = "money")]
-        public decimal minPedidoAtacado { get; set; }
+        public decimal? minPedidoAtacado { get; set; }
         [Required]
         public int FreteStatusID { get; set; }
         public decimal percDescAVista { get; set; }
-        public string Endereco { get; set; }
-        public string Instagram { get; set; }
-        public string Contato { get; set; }
+        public string? Endereco { get; set; }
+        public string? Instagram { get; set; }
+        public string? Contato { get; set; }
     }
 }
